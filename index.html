@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>上课管理</title>
+</head>
+<body>
+	<button class="btn" id="button">休息</button>
+<style>
+	.btn-active { width: 60px; height: 40px; background: #F00;}
+	.btn { width: 60px; height: 40px;}
+</style>
+<script>
+	console.log(window)
+	const ipcRenderer = require('electron').ipcRenderer;
+	var button = document.getElementById('button');
+	var on = false
+	button.onclick = function(){
+		on = !on
+		button.innerText = on?"上课中":"休息"
+		button.className = on?"btn-active":"btn"
+	}
+
+	function loop() {
+		if( on )
+			ipcRenderer.send('timer-on', 'ping');
+		setTimeout(loop, 6000);
+	}
+	loop()
+
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+mkdir /Volumes/UDE-Mac
+mount_smbfs //guest:@192.168.0.132/UDE-Mac /Volumes/UDE-Mac
+

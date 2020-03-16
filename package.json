@@ -1,0 +1,15 @@
+{
+  "name": "nuitest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-packager . --platform=win32 --electron-version=8.1.1 --overwrite"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
