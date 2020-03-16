@@ -9,7 +9,10 @@ const ipc = require('electron').ipcMain;
 
 function createWindow () {
   // 创建浏览器窗口.
-  win = new BrowserWindow({title:'上课管理', width: 100, height: 80,autoHideMenuBar :true, alwaysOnTop:true})
+    win = new BrowserWindow({title:'上课管理', width: 300, height: 80,autoHideMenuBar :true, alwaysOnTop:true,
+        webPreferences: {
+            nodeIntegration: true
+        }})
 
   win.setMenu(null);
 

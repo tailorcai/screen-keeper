@@ -24,7 +24,7 @@
 	function loop() {
 		if( on )
 			ipcRenderer.send('timer-on', 'ping');
-		setTimeout(loop, 6000);
+		setTimeout(loop, 60000);
 	}
 	loop()
 
