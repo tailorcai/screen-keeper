@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "electron-packager . --platform=win32 --electron-version=8.1.1 --overwrite"
+    "package-win32": "electron-packager . --platform=win32 --electron-version=8.1.1 --overwrite",
+    "package-darwin": "ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ ELECTRON_CUSTOM_DIR=8.1.1 electron-packager . --platform=darwin --electron-version=8.1.1 --overwrite"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "request": "^2.88.2"
   }
 }
