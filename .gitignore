@@ -1,2 +1,4 @@
 node_modules
 nuitest-darwin-x64
+config.json
+.*

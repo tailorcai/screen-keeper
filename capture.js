@@ -6,12 +6,7 @@ var moment = require("moment");
 // var path = require("path");
 var request = require("request");
 
-var config = {
-	capture_console_only: false,
-	upload_url: "http://ss.irisleciel.com:8010/upload",
-	// upload_url: "http://127.0.0.1:8010/upload",
-	hostname: os.hostname()
-};
+var config = require("./config"); 
 
 // var root_path = function() {
 //     if (process.platform == "darwin")
@@ -43,7 +38,7 @@ function capture() {
 	
 	var filedate = new Date();
 	var p1 = moment(filedate).format("YYYY-MM-DD_HH_mm-ss")
-	var filename = `${config.hostname}_${p1}-${encodeURIComponent(crypto.randomBytes(16).toString('base64'))}.jpg`
+	var filename = os.hostname()+`_${p1}-${encodeURIComponent(crypto.randomBytes(16).toString('base64'))}.jpg`
 	var filepath = os.tmpdir() + '/' + filename;
 
 	if (process.platform == "darwin") {
